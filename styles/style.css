@@ -1,0 +1,272 @@
+* {
+	margin: 0;
+	padding: 0;
+	outline: none;
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+}
+
+body {
+	background-color: #303530;
+	user-select: none;
+}
+
+header {
+	display: flex;
+	justify-content: center;
+	padding: 15px;
+}
+
+.headerSearch {
+	display: flex;
+	margin: auto;
+	position: relative;
+}
+
+.searchInput {
+	width: 60vw;
+	height: 50px;
+	border-radius: 10px;
+	border: none;
+	padding: 0 50px 0 25px;
+	font-size: 20px;
+}
+
+.searchImg {
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	border-radius: 10px;
+	font-size: 25px;
+	border: none;
+	background: transparent;
+	line-height: 50px;
+	text-align: center;
+	cursor: pointer;
+	transition: color 0.5s ease, background-color 0.5s ease;
+}
+
+
+.searchImg:hover {
+	color: #fff;
+	background-color: #f78585;
+}
+
+main {
+	width: auto;
+	min-width: 100%;
+	overflow: hidden;
+	position: relative;
+	height: calc(100vh - 160px);
+}
+
+.videosList {
+	position: absolute;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	min-width: 100%;
+	list-style-type: none;
+	top: 20px;
+	left: 0vw;
+	transition: left 1s ease;
+}
+
+.videoItem {
+	width: 25vw;
+	max-height: 70vh;
+	border-radius: 10px;
+	background-color: #fff;
+	position: relative;
+	overflow: hidden;
+}
+
+.videoItem .title {
+	color: #fff;
+	background-color: #000;
+	position: absolute;
+	width: calc(25vw - 20px);
+	min-width: 100%;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: center; 
+	top: 8vh;
+	font-size: 18px;
+	transition: color .5s ease;
+}
+
+.videoItem .title:hover {
+	color: #f78585;
+}
+
+.videoItem .imgHolder img {
+	width: 25vw;
+	height: 25vh;
+	border-radius: 10px 10px 0 0;
+}
+
+.videoItem .descripton {
+	padding: 5px 10px;
+	font-size: 14px;
+	font-style: italic;
+	text-align: center;
+	margin-top: 15px;
+}
+
+.videoItem .user {
+	min-width: 100%;
+	width: calc(25vw - 20px);
+	text-align: center;
+	color: #757474;
+	margin-top: 20px;
+}
+
+.videoItem .user i {
+	margin-right: 5px;
+	font-size: 30px;
+}
+
+.videoItem .userName {
+	display: inline-block;
+	font-size: 16px;
+	vertical-align: super;
+}
+
+.videoInfo {
+	margin: 25px 10px 10px 10px;
+}
+
+.videoInfo > * {
+	display: inline-block;
+	min-width: 49%;
+}
+.videoInfoItem {
+	padding: 10px;
+}
+
+.videoInfoItem * {
+	display: inline-block;
+}
+
+.videoInfoItem i {
+	font-size: 22px;
+}
+
+.videoInfoItem p {
+	font-size: 14px;
+	margin-left: 10px;
+	vertical-align: text-bottom;
+}
+
+footer {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+}
+
+.videoItemNav {
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	background-color: #fff;
+	display: inline-block;
+	line-height: 23px;
+	text-align: center;
+	font-size: 14px;
+	color: #fff;
+	margin: 5px;
+	transition: border 0.5s ease, color.5s ease;
+	border: 2px solid #fff;
+}
+
+.videoItemNav:hover {
+	border: 2px solid #000;
+	color: #000;
+}
+
+.videoItemNav.active {
+	border: 2px solid #000;
+	color: #000;
+}
+
+@media only screen and (max-width: 992px) {
+	.videoItem {
+		width: 55vw;
+	}
+	.videoItem .imgHolder img {
+		width: 55vw;
+	}
+	.videoInfo > * {
+		display: inline-block;
+		min-width: 49%;
+		text-align: center;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	.videoItem {
+		margin-top: 5vh;
+		height: 55vh;
+	}
+
+	.videoInfo {
+		display: none;
+	}
+	.videoItem .title {
+		font-size: 14px;
+	}
+	.videoItem .descripton {
+		font-size: 12px;
+	}
+	.videoItem .user {
+		margin-top: 10px;
+	}
+	.videoItem .user i {
+		font-size: 20px;
+	}
+	.videoItem .userName {
+		font-size: 12px;
+	}
+}
+
+@media only screen and (max-height: 380px) {
+	main {
+		height: calc(100vh - 140px);
+	}
+	header {
+		padding-bottom: 0;
+	}
+	.videoItem {
+		margin-top: 0;
+		height: 50vh;
+	}
+	.videoItem .imgHolder img {
+		height: 50vh;
+	}
+
+	.videoItem .videoInfo,
+	.videoItem .descripton,
+	.videoItem .user {
+		display: none;
+	}
+}
+
+@media only screen and (max-height: 480px) {
+	main {
+		height: calc(100vh - 140px);
+	}
+	header {
+		padding-bottom: 0;
+	}
+	.videoItem {
+		margin-top: 0;
+	}
+	.videoItem .videoInfo {
+		display: none;
+	}
+}
